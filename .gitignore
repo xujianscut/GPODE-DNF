@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+supp-DNF/demo/results/
+*.swp
+.DS_Store
