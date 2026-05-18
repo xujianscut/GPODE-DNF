@@ -93,20 +93,6 @@ AISTATS supplementary submission. The improvements live entirely inside
 4. **MC samples for KL reduced from 64 to 4.** SGD noise dominates anyway;
    ~10× cheaper KL computation.
 
-### Reproduction (MoCap subject 09, full sequence)
-
-7 seeds × 600 iterations, A100 GPU, `data_subject='09'`, `data_seqlen=100`:
-
-| Config | best TEST MSE | best TEST MNLL |
-|---|---|---|
-| Original code (KL grad blocked by bug) | 7.69 | 1.25 |
-| KL gradient fix only (posterior collapses) | 17.40 | 1.41 |
-| **KL fix + β-annealing (this release)** | **6.69** | **1.18** |
-| _Paper Table 5 — subj09 short_ | _7.03 ± 0.24_ | _0.98 ± 0.02_ |
-| _Paper Table 5 — subj09 long_  | _6.04 ± 0.45_ | _0.96 ± 0.02_ |
-
-Best result: `seed=2025`, `kl_warmup=400`.
-
 ---
 
 ## Citation
